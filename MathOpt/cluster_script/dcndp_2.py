@@ -200,7 +200,7 @@ def minimize_dcnp(input_graph, L, C):
         for i in input_graph.nodes():
             if i < j:
                 for l in range(1, L + 1):
-                    u_connect[i, j, l] = model.addVar(lb=0.0, ub=1.0, vtype=GRB.CONTINUOUS,
+                    u_connect[i, j, l] = model.addVar(lb=0.0, ub=1.0, vtype=GRB.BINARY,
                                                       name="u[%d,%d,%d]" % (i, j, l))
 
     # objective

@@ -234,7 +234,7 @@ def minimize_dcnp(input_graph: nx.Graph, c: float):
         # connectivity variables
         for i in input_graph.nodes():
             if i < j:
-                u_connect[i, j] = model.addVar(lb=0.0, ub=1.0, vtype=GRB.CONTINUOUS, name=f'u[{i},{j}]')
+                u_connect[i, j] = model.addVar(lb=0.0, ub=1.0, vtype=GRB.BINARY, name=f'u[{i},{j}]')
 
     # objective
     obj = LinExpr(0)
