@@ -140,7 +140,7 @@ def minimize_dcnp(input_graph, L, C):
     model.setParam(GRB.param.Cuts, 0)
     model.setParam(GRB.param.PreCrush, 1)
     model.setParam('LazyConstraints', 1)
-    model.setParam('TimeLimit', 3600)
+    model.setParam('TimeLimit', 10800)
     model.optimize(cut)
     run_time = model.Runtime
     x_delete_val = model.getAttr('x', x_delete)
